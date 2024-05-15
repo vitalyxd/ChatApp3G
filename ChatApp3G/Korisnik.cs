@@ -16,14 +16,18 @@ namespace ChatApp3G
         private string username;
         private string password;
 
+        // Konstruktor bez parametara
+        public Korisnik() { }
+
+        // Konstruktor s parametrima
         public Korisnik(string ime, string prezime, string email, string korisnickoIme, string password)
         {
             this.ime = ime;
             this.prezime = prezime;
             this.email = email;
+            this.username = korisnickoIme;
             this.password = password;
         }
-
         public int Id
         {
             get { return id; }
@@ -65,6 +69,7 @@ namespace ChatApp3G
             get { return password; }
             set { password = value; }
         }
+
         public int CompareTo(object obj)
         {
             int rez = this.id.CompareTo(((Korisnik)obj).id);
@@ -72,8 +77,10 @@ namespace ChatApp3G
             if (rez == 0) rez = this.email.CompareTo(((Korisnik)obj).email);
             return rez;
         }
-        public override string ToString()
 
-           => username + "," + email + "->" + id.ToString();
+        public override string ToString()
+        {
+            return $"{ime} {prezime} ({username}) - {email}";
+        }
     }
 }

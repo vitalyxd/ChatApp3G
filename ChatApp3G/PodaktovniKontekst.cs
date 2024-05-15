@@ -113,7 +113,7 @@ namespace ChatApp3G
         {
             using (StreamWriter sw = new StreamWriter(datPoruke))
             {
-                foreach (Poruka p in this.Poruke)
+                foreach (Poruke p in this.Poruke)
                 {
                     sw.WriteLine("{0}|{1}|{2}", p.Id);
                 }

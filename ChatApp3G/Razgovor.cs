@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChatApp3G
 {
-    internal class Razgovor : IComparable 
+    public class Razgovor : IComparable 
     {
         private int id;
         private Korisnik brojKorisnika;
