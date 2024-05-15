@@ -16,6 +16,15 @@ namespace ChatApp3G
         private string username;
         private string password;
 
+        public Korisnik(string ime, string prezime, string email, string korisnickoIme, string password)
+        {
+            this.ime = ime;
+            this.prezime = prezime;
+            this.email = email;
+            this.password = password;
+        }
+
+        
         public int Id
         {
             get { return id; }
@@ -66,6 +75,6 @@ namespace ChatApp3G
         }
         public override string ToString()
 
-           => Username + "," + Email + "->" + Id.ToString();
+           => username + "," + email + "->" + id.ToString();
     }
 }

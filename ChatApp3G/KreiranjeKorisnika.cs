@@ -18,7 +18,7 @@ namespace ChatApp3G
             InitializeComponent();
         }
 
-        private void btnDodajKorisnika_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             // Prikaži podatke u ListBox-u
             string ime = textBox1.Text;
@@ -29,15 +29,10 @@ namespace ChatApp3G
 
             // Kreiraj novi korisnik
             Korisnik noviKorisnik = new Korisnik
-            {
-                Ime = ime,
-                Prezime = prezime,
-                Email = email,
-                Username = korisnickoIme
-            };
+            (ime, prezime, email, korisnickoIme, password);
 
             // Dodaj korisnika u ListBox
-            listBoxKorisnici.Items.Add(noviKorisnik);
+            listBox1.Items.Add(noviKorisnik);
 
             
         }

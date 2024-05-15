@@ -14,11 +14,11 @@ namespace ChatApp3G
     public class PodatkovniKontekst
     {
         private List<Korisnik> korisnici;
-        private List<Poruka> poruke;
+        private List<Poruke> poruke;
         private List<Razgovor> razgovori;
 
         public List<Korisnik> Korisnici { get { return this.korisnici; } }
-        public List<Poruka> Poruke { get { return this.poruke; } }
+        public List<Poruke> Poruke { get { return this.poruke; } }
         public List<Razgovor> Razgovori { get { return this.razgovori; } }
 
         private string datKorisnici = "korisnici.dat";
@@ -57,9 +57,9 @@ namespace ChatApp3G
             return korisnici;
         }
 
-        private List<Poruka> UcitajPoruke()
+        private List<Poruke> UcitajPoruke()
         {
-            List<Poruka> poruke = new List<Poruka>();
+            List<Poruke> poruke = new List<Poruke>();
             if (File.Exists(datPoruke))
             {
                 using (StreamReader sr = new StreamReader(datPoruke))
@@ -68,7 +68,7 @@ namespace ChatApp3G
                     {
                         string linija = sr.ReadLine();
                         string[] polja = linija.Split('|');
-                        Poruka p = new Poruka();
+                        Poruke p = new Poruke();
                         p.Id = int.Parse(polja[0]);
                         poruke.Add(p);
                     }
@@ -115,7 +115,7 @@ namespace ChatApp3G
             {
                 foreach (Poruka p in this.Poruke)
                 {
-                    sw.WriteLine("{0}|{1}|{2}", p.Id,);
+                    sw.WriteLine("{0}|{1}|{2}", p.Id);
                 }
             }
         }
@@ -126,32 +126,12 @@ namespace ChatApp3G
             {
                 foreach (Razgovor r in this.Razgovori)
                 {
-                    sw.WriteLine("{0}|{1}|{2}", r.Id,);
+                    sw.WriteLine("{0}|{1}|{2}", r.Id);
                 }
             }
         }
     }
 
-    public class Korisnik
-    {
-        public int Id { get; set; }
-        public string Ime { get; set; }
-        public string Prezime { get; set; }
-        public string Email { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-    }
-
-    public class Poruka
-    {
-        public int Id { get; set; }
-        
-    }
-
-    public class Razgovor
-    {
-        public int Id { get; set; }
-        
-    }
+    
 
 }
