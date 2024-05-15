@@ -24,7 +24,6 @@ namespace ChatApp3G
             this.password = password;
         }
 
-        
         public int Id
         {
             get { return id; }
