@@ -12,7 +12,7 @@ namespace ChatApp3G
             
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Button clicked!");
+            MessageBox.Show("Uspješno napravljen korisnik");
             // Prikaži podatke u ListBox-u
             string ime = textBox1.Text;
             string prezime = textBox2.Text;
@@ -40,14 +40,30 @@ namespace ChatApp3G
             // Očisti polja nakon dodavanja korisnika
             textBox1.Clear();
             textBox2.Clear();
+            textBox3.Clear();
             textBox4.Clear();
             textBox5.Clear();
             textBox6.Clear();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
+            // Provjeri dal je odabran item(korisnik) u textboxu
+            if (listBox1.SelectedItem != null)
+            {
+                // Obrisi ga
+                listBox1.Items.Remove(listBox1.SelectedItem);
+            }
+            else
+            {
+                MessageBox.Show("Molimo odaberite korisnika za brisanje.", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
+
